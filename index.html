@@ -3,36 +3,620 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Projet final de Programation Web 2026</title>
+        <link href="https://fonts.googleapis.com/css?family=Titillium Web" rel="stylesheet">
+        <link rel="stylesheet" href="assets/css/style.css">
     </head>
-
+    <!-- Page Start -->
+    <!-- Page divisée en plusieurs grandes parties : - I contenant le titre, les images et un boutton pour afficher la partie II
+                                                     - II contenant le tableau et la liste + boutton date et maj  
+                                                     - III contenant le "container et les bouttons ayant des fonctions de TAL
+                                                     - IV contenant le lien vers un site externe (url)
+                                                     -->
     <body>
-<h1 align="center">Daenuelle Ocomen</h1>
-<h2 align="center">Licence 2 Sciences du language, mineure Informatique</h2>
-<center><img src="./assets/img/Bienvenue.jpg" width="20%" /><img src="./assets/img/Capture d'écran 2026-01-22 154445.png" width="10%" /></center>
-
-<p>Mon CV des trois dernières années :</p>
-<table border="100px">
-    <thead>
-        <tr><th>Année Universitaire</th><th>Statut</th></tr>
-    </thead>
-    <tbody>
-        <tr><td>2022-2023</td><td>L1 Sciences du Language mineure Humanités Numériques</td></tr>
-        <tr><td>2021-2022</td><td>Garde d'enfant à plein temps</td></tr>
-        <tr><td>2020-2021</td><td>Aucune activité salariale ou étudiante</td></tr>
-        <tr><td>2019-2020</td><td>L1 LLCER Japonais</td></tr>
-    </tbody>
-</table>
-
-<p>Voici les cinq derniers livres que j'ai lu :</p>
-<ul>
-    <li><i>Ascendance of a Bookworm, Part 5 : Avatar of a Goddess, Volume 13</i>, Miya Kazuki, édition TO Books</li>
-    <li><i>Ascendance of a Bookworm, Part 5 : Avatar of a Goddess, Volume 12</i>, Miya Kazuki, édition TO Books</li>
-    <li><i>Ascendance of a Bookworm, Part 5 : Avatar of a Goddess, Volume 11</i>, Miya Kazuki, édition TO Books</li>
-    <li><i>Ascendance of a Bookworm, Part 5 : Avatar of a Goddess, Volume 10</i>, Miya Kazuki, édition TO Books</li>
-    <li><i>Ascendance of a Bookworm, Part 5 : Avatar of a Goddess, Volume 9</i>, Miya Kazuki, édition TO Books</li>
-
-<footer>
-  <p><a href="https://crl.u-paris.fr/">Lien vers le site de Paris Cité.</a></p>
-</footer>
+        <div class="page">
+            <div id="I">
+                <div class="header">
+                    <h1>OCOMEN Daenuelle</h1>
+                    <h2>Licence 2 Sciences du language, mineure Informatique</h2>
+                </div>
+                <!-- Images -->
+                <!-- Les images sont placées dans des listes pour faciliter la modification de leur apparences -->
+                <div class="img_list">
+                    <ul>
+                        <li>
+                            <figure class="img1">
+                                <img src="./assets/img/RM_crest.webp" alt="img1" />
+                            </figure>
+                        </li>
+                        <li>
+                            <figure class="img2">
+                                <img src="./assets/img/ALE_crest.webp" alt="img2" />
+                            </figure>
+                        </li>
+                    </ul>
+                </div>
+                <!-- Add extra button for table + list (DONE)-->
+                <div style="text-align: center; margin: 20px;">
+                    <button onclick="toggleSection('more', 'btn_more')">CV</button>
+                    <button onclick="toggleSection('cont', 'btn_cont')">Outils</button>
+                </div>
+            </div>
+            <div id="II" class="container">
+                <div id="more" style="display: none;" class="sub_box">
+                    <!-- Table -->
+                    <div class="CV">
+                        <div class="header">
+                            <h2>CV des années passées </h2>
+                        </div>
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Année Universitaire</th>
+                                    <th>Statut</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>2022-Aujourd'hui</td>
+                                    <td>Licence Sciences du Language mineure Humanités
+                                        Numériques</td>
+                                </tr>
+                                <tr>
+                                    <td>2021-2022</td>
+                                    <td>Garde d'enfant à plein temps</td>
+                                </tr>
+                                <tr>
+                                    <td>2019-2020</td>
+                                    <td>L1 LLCER Japonais</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="header">
+                        <h2>Livres lus récemment</h2>
+                    </div>
+                    <div class="books">
+                        <!-- List -->
+                        <ul>
+                            <li><i>Ascendance of a Bookworm, Part 5 : Avatar of a Goddess, Volume
+                                    13</i>, Miya Kazuki, édition TO Books</li>
+                            <li><i>Ascendance of a Bookworm, Part 5 : Avatar of a Goddess, Volume
+                                    12</i>, Miya Kazuki, édition TO Books</li>
+                            <li><i>Ascendance of a Bookworm, Part 5 : Avatar of a Goddess, Volume
+                                    11</i>, Miya Kazuki, édition TO Books</li>
+                            <li><i>Ascendance of a Bookworm, Part 5 : Avatar of a Goddess, Volume
+                                    10</i>, Miya Kazuki, édition TO Books</li>
+                            <li><i>Ascendance of a Bookworm : Hannelore's Fifth Year at the Royal
+                                    Academy,Volume 1</i>, Miya Kazuki, édition TO Books</li>
+                        </ul>
+                    </div>
+                    <!-- Add time + Shift butttons (DONE)-->
+                    <div class="date">
+                        <p id="date_maj" style="text-align: center; margin: 20px;">Afficher la date
+                            et mettre en majuscule:<br /></p>
+                        <span id="full_datetime"> </span>
+                        <div style="text-align: center;">
+                            <button type="button" class="btn_box1" id="btn_date"
+                                onclick="showDateTime()">Date</button>
+                            <button type="button" class="btn_box1" id="btn_maj"
+                                onclick="makeUppercase()">Majuscule</button>
+                        </div>
+                    </div>
+                    <br />
+                    <br />
+                </div>
+            </div>
+            <!-- Button w/ alert ; container -->
+            <div id="III" class="container">
+                <div id="cont" style="display: none;" class="sub_box">
+                    <div class="page_wrap">
+                        <div class="header">
+                            <h2>Analyse de fichiers </h2>
+                        </div>
+                        <div class="btn_box">
+                            <button style="display: flex;" onclick="alert('こんにちは');">
+                                <span>Salutations</span>
+                            </button>
+                        </div>
+                        <br />
+                        <p style="text-align: center;">Sélectionner un fichier au format .txt :</p>
+                        <span>
+                            <label for="fileIn" class="btn"> </label>
+                            <input id="fileIn" type="file" accept="text/plain" name="Fichier (.txt)"
+                             />
+                        </span>
+                        <br />
+                        <br />
+                        <!-- Add text (DONE)-->
+                        <p id="HNG_extract" style="text-align: center;">Extrait d'un livre, en
+                            absence de fichiers :</p>
+                        <div style="text-align: center;">
+                            <button id="HNG_btn" onclick="displayMessage()">Cliquer ici!</button>
+                        </div>
+                        <script id="hidden_HNG_text" type="text/plain">
+Prologue
+Urano Motosu aimait les livres. La psychologie, la religion, l'histoire, la géographie, l'éducation,
+l'anthropologie, les mathématiques, la physique, la géologie, la chimie, la biologie, l'art, la langue, la
+fiction... Les livres étaient remplis de la connaissance de toute l'humanité et elle les aimait du fond du
+cœur.
+Elle se sentait récompensée chaque fois qu'elle lisait un livre rempli de faits et d'anecdotes
+nouveaux pour elle. Regarder des mondes à son insu à travers des cartes et des anthologies d'images
+lui a fait ressentir la félicité enivrante de son monde en expansion. Elle s'intéressait même aux vieux
+contes et mythes de pays étrangers, car elle avait l'impression qu'ils lui donnaient un aperçu de
+différentes cultures d'âges lointains. Ils étaient riches en histoire et elle ne pouvait pas compter le
+nombre d'heures qu'elle avait perdues à percer leurs mystères.
+Urano aimait l'odeur distinctive des vieux livres entassés dans la réserve d'une bibliothèque, et
+même l'air poussiéreux l'attirait tellement qu'elle se dirigeait toujours directement vers les arrière
+salles des bibliothèques qu'elle visitait. Elle remplissait lentement ses poumons de la vieille odeur de
+moisi et regardait les vieux livres, se sentant exaltée par rien que cela. Bien sûr, elle aimait aussi
+l'odeur du papier neuf et de l'encre. Elle s'amusait à se demander ce qui serait écrit sur ces pages,
+quelles nouvelles informations l'attendaient.
+Par-dessus tout, Urano ne se sentait tout simplement pas bien quand ses yeux ne scrutaient pas
+les lignes d'un livre. Pour survivre, elle gardait toujours un livre à portée de main, qu'elle prenne un
+bain, qu'elle aille aux toilettes ou même qu'elle se promène. Elle avait vécu de cette façon depuis son
+enfance jusqu'à l'obtention de son diplôme universitaire, s'accrochant aux livres avec une telle ferveur
+que tous ceux qui connaissaient Urano l'appelaient « ce rat de bibliothèque bizarre ». Ils ont dit qu'elle
+aimait tellement les livres que cela nuisait à sa vie.
+Mais Urano s'en fichait, peu importe ce qu'ils disaient. Elle avait des livres, et cela suffisait à la
+rendre heureuse.
+Un gros camion passa devant Urano, crachant derrière lui l'odeur des gaz d'échappement. Le
+vent chaud passa devant elle, faisant bruisser sa frange. Mais elle n'y prêta aucune attention. Tout ce
+qui l'intéressait, c'était de tenir à la hâte les pages de son livre avant qu'elles ne se retournent et qu'elle
+ne perde sa place.
+« Urano, allez, c'est dangereux. Reste près de moi.
+« Mmm... » Urano releva ses lunettes et répondit paresseusement, se concentrant davantage sur
+les mots devant elle. Elle remarqua que ses cheveux froissés la gênaient et les écarta rapidement. Un
+soupir d'exaspération lui parvint aux oreilles et elle sentit quelqu'un tirer sur son bras, un peu fort. Ses
+sourcils se froncèrent. « Shuu, ça fait mal. »
+« Plaignez-vous tant que vous voulez. Un peu de douleur, c'est beaucoup mieux que de se faire
+renverser par un camion et de mourir, n'est-ce pas ?
+« C'est vrai. Je ne voudrais pas mourir d'autre chose que d'une avalanche de livres.
+Urano voulait vivre toute sa vie entourée de livres. Si possible, elle voulait passer toute sa vie à
+l'intérieur d'une réserve de livres, où il n'y a pas de soleil pour endommager les pages, mais juste assez
+de circulation d'air pour garder les choses confortables.
+Le temps qui n'était pas passé à lire des livres était du temps perdu.
+Même si les gens disaient que sa peau était dégoûtante et pâle et se moquaient d'elle parce
+qu'elle était faible à cause du manque d'exercice, même si sa mère lui criait dessus parce qu'elle avait
+oublié de manger, elle n'avait pas l'intention de lâcher ses livres.
+Si elle devait mourir d'une manière ou d'une autre, elle pourrait tout aussi bien mourir écrasée
+par une avalanche de livres. Cela la rendrait beaucoup plus heureuse qu'une mort lente dans un lit
+d'hôpital. Urano le croyait sincèrement.
+« Je vous dis toujours de ne pas lire pendant que vous marchez. Si je n'avais pas été là, tu serais
+certainement allé droit sur la route et tu serais mort en un rien de temps. Que diriez-vous d'un petit
+merci ?
+"Mais je dis-le tout le temps. Je suis tellement, tellement reconnaissante.
+« Cela ne me semble pas très sincère. »
+« Je suis, je suis. C'est grâce à toi que je peux lire des livres tout en faisant des tâches
+ménagères, Shuu. Mais même si je mourais, je demanderais à un dieu de me réincarner pour que je
+puisse continuer à lire des livres dans ma prochaine vie. N'est-ce pas intelligent ? Ahaha.
+« La vie n'est pas si commode, crétin. »
+Leur conversation se poursuivit jusqu'à ce qu'ils atteignent la maison d'Urano. Shuu entra avec
+elle plutôt que d'aller dans sa propre maison voisine. Comme ils étaient amis d'enfance et qu'ils
+fréquentaient la même garderie, ils avaient été élevés comme des frères et sœurs pratiquement depuis
+leur naissance. Il se référait toujours à la maison d'Urano comme à sa maison, et personne ne le
+remettait en question.
+« Maman, voici ce que tu voulais. Je serai dans la salle des livres. Appelez-moi dès que le dîner
+est prêt.
+« D'accord, d'accord. Et toi, Shuu ? Ta mère a-t-elle l'intention de faire quelque chose ?
+« Non, je mange ici ce soir. Elle a du travail. Urano, j'emprunte ta télé pour jouer à des jeux.
+« Euh huh, vas-y. » Urano éleva la voix pour que Shuu puisse l'entendre alors qu'elle se dirigeait
+directement vers la salle de stockage des livres laissée par son père, décédé quand elle était jeune. Elle
+ouvrit la porte et alluma les lumières.
+La salle des livres avait une fenêtre à des fins de ventilation, mais elle était étroitement
+recouverte d'un épais rideau bloquant la lumière pour protéger les livres de la lumière du soleil. Il y
+avait des bibliothèques remplies de livres de tous les côtés et un bureau avec une énorme pile de livres
+dessus, car Urano avait acheté tellement de nouveaux livres que les étagères ne pouvaient pas tous les
+contenir.
+Urano s'assit doucement sur la chaise de bureau sans lever les yeux de son livre, et continua à
+lire. Soudain, sa vision trembla. Elle a conclu qu'un tremblement de terre était en train de se produire
+et a continué à lire comme toujours. Les secousses étaient plus fortes que d'habitude, ce qui rendait la
+lecture difficile.
+Ses sourcils se froncèrent et elle leva les yeux, frustrée par le tremblement de terre, pour voir
+que les livres dominaient sa vision. « Hyaaah ?! »
+Des livres dégringolèrent d'une étagère inclinée et pleuvirent sur elle. Incapable de les esquiver,
+Urano ne pouvait que les regarder les yeux grands ouverts alors qu'elle était ensevelie sous eux.
+Une Nouvelle Vie
+... Il fait si chaud. Ça fait mal. Je déteste ça...
+Une voix d'enfant a crié directement dans ma tête, remplie de douleur et de souffrance.
+Eh bien, que voulez-vous que je fasse à ce sujet ? Je n'avais aucune idée de ce que je devais
+faire, et au fil du temps, la voix est devenue de plus en plus calme.
+Au moment où j'ai réalisé que je ne pouvais plus entendre la voix de l'enfant, la chose en forme
+de bulle qui m'avait encapsulé a disparu en un éclat, et j'ai senti ma conscience s'élever lentement.
+En même temps, j'ai senti une fièvre chaude et la douleur se répandre dans tout mon corps
+comme si j'avais été affligé de la grippe. J'ai hoché la tête et j'ai convenu avec l'enfant, c’est
+certainement chaud et ça fait certainement mal. Moi aussi, je déteste ça.
+Mais la voix de l'enfant ne répondit pas.
+Il faisait si chaud. J'ai essayé de me déplacer pour trouver un endroit plus froid dans le lit. Peut
+être qu'à cause de la fièvre, je ne pouvais pas bouger mon corps comme je le voulais. Mais j'ai
+continué malgré tout, et alors que je remuais mon corps, j'ai entendu le bruit de quelque chose comme
+du papier et de l'herbe qui se frottaient l'un contre l'autre sous moi.
+“... Qu'est-ce que c'est que ce bruit ? J'aurais dû avoir mal à la gorge à cause de la fièvre, mais
+une voix enfantine et aiguë est sortie de ma bouche. Ce n'était clairement pas ma propre voix, et elle
+ressemblait à la voix de l'enfant que j'avais entendue dans ma tête une seconde plus tôt.
+Je voulais continuer à dormir car la fièvre me rendait si léthargique, mais je ne pouvais pas
+ignorer le fait que j'étais dans un lit inconnu et que ma voix n'était pas la mienne, alors j'ai lentement
+soulevé mes paupières lourdes.
+Ma fièvre devait être énorme, car mes yeux étaient humides et ma vision déformée.
+Heureusement, mes larmes servaient apparemment de lentilles de fortune, car je pouvais voir
+beaucoup plus loin que je ne pouvais le faire sans mes lunettes.
+« Quoi ? » Pour une raison quelconque, je pouvais voir la petite main d'un enfant à l'air malsain
+tendue devant moi. Bizarre. Ma main devrait être beaucoup plus grande que ça. J'ai les mains d'un
+adulte, pas d'un petit enfant mal nourri.
+Je pouvais bouger la main de l'enfant comme la mienne, la serrer et l'ouvrir. Ce corps que je
+pouvais mouvoir à volonté n'était pas le mien. Le choc de cette révélation m'a fait sécher la bouche.
+“... Que se passe-t-il ?
+Veillant à ce que les larmes ne coulent pas de mes yeux humides, j'ai déplacé mon regard tout en
+gardant la tête immobile. Il ne m'a pas fallu longtemps pour remarquer que je n'étais pas dans ma
+propre chambre. Le lit sous moi était dur et manquait de matelas ; Il utilisait plutôt des coussins faits
+de quelque chose de piquant et de rugueux. La couverture sale jetée sur moi avait une odeur bizarre et
+tout mon corps me démangeait comme s'il était infesté de puces ou de punaises de lit.
+« Attends, attends... Où suis-je ? Mon dernier souvenir était d'avoir été écrasé par une avalanche
+de livres, et il était peu probable que j'aie été sauvé à temps. À tout le moins, j'étais sûr qu'aucun
+hôpital au Japon ne traiterait des patients sur un lit aussi sale. Que se passe-t-il?
+« Je... Je suis définitivement mort, n'est-ce pas ? Tout indiquait que oui. J'étais morte écrasée par
+les livres. Ce tremblement de terre était au mieux de trois ou quatre sur l'échelle de Richter. Ce n'était
+pas le genre de tremblement de terre qui tuait des gens. Donc, ma mort s'était définitivement retrouvée
+dans les nouvelles, quelque chose comme : « Une étudiante sur le point d'obtenir son diplôme a été
+écrasée à mort par des livres dans sa propre maison. »
+... C'est tellement gênant ! Je suis mort deux fois ce jour-là, une fois physiquement et une fois
+socialement. Je me sentais tellement gênée que j'ai essayé de me rouler sur le lit, mais par peur pour
+ma tête lourde et douloureuse, j'ai décidé de doubler la paume de la face à la place.
+"Je veux dire, d'accord, j'ai vraiment plaisanté à ce sujet. J'ai vraiment pensé que, si je devais
+mourir, je pourrais aussi bien mourir écrasé par les livres. Honnêtement, je pensais que ce serait mieux
+que de mourir d'une mort lente sur un lit d'hôpital. Mais tout cela était faux. J'avais rêvé d'une mort
+heureuse à la fin d'une vie entourée de livres. Honnêtement, je ne m'attendais pas à ce qu'un
+tremblement de terre se produise et m'écrase à mort si tôt.
+« C'est affreux. Moi aussi, je venais d'être embauché. Oooh, ma douce bibliothèque
+d'université... En cette époque troublée de chômage élevé, je venais de décrocher un emploi dans une
+bibliothèque universitaire. À force de courage et de détermination à réaliser mon rêve d'une vie
+heureuse entourée de livres, j'ai passé tous les tests et entretiens nécessaires et j'ai finalement remporté
+la victoire. Ce travail impliquait de passer beaucoup plus de temps autour des livres que n'importe quel
+autre, et la bibliothèque avait même beaucoup de livres et de documents anciens.
+Ma mère, qui s'inquiétait plus pour moi que quiconque, s'est même mise à pleurer en apprenant
+la nouvelle. « C'est merveilleux. Urano, tu as trouvé un bon emploi respectable. Je suis si fière de toi
+», avait-elle dit, les larmes coulant de ses yeux. Et quelques jours plus tard, je me lève et je meurs ?
+J'ai pensé à la façon dont ma mère avait dû pleurer en apprenant ma mort. Elle, la mère que je
+ne reverrais jamais, serait certainement folle. Je pouvais dire avec certitude qu'à un moment donné,
+elle avait crié : « Combien de fois t'ai-je dit de te débarrasser de certains de ces livres ?! »
+« Je suis désolée, maman... J'ai levé une main lourde et lente pour essuyer mes larmes.
+Avec beaucoup d'effort, j'ai lentement levé la tête et j'ai redressé mon corps brûlant avant de
+regarder autour de moi pour obtenir autant d'informations que possible, sans prêter attention à mes
+cheveux collés à mon cou en sueur. La pièce n'avait que quelques commodes pour ranger les affaires et
+deux tables, apparemment des lits, chacune recouverte de couvertures sales. Malheureusement, il n'y
+avait pas d'étagère en vue.
+« Je ne vois pas de livres... Peut-être n'est-ce qu'un cauchemar ? Un cauchemar de mort ? Si un
+dieu avait exaucé mon vœu et m'avait réincarné, il aurait dû y avoir des livres à proximité. Mon
+souhait était de continuer à lire des livres après ma renaissance, après tout. Tout en réfléchissant avec
+ma tête fiévreuse et embrumée, j'ai regardé un nid d'araignée suspendu au plafond sombre et taché de
+suie.
+Bientôt, cependant, la porte s'ouvrit et une femme entra. Peut-être m'a-t-elle entendu bouger, ou
+peut-être m'a-t-elle entendu me parler à moi-même. Mais, quoi qu'il en soit, c'était une belle femme
+avec un bandana triangulaire noué sur la tête qui avait l'air d'avoir une vingtaine d'années. Elle avait un
+beau visage, mais elle était sale. Si sale que je croirais qu'elle est sans-abri si je la voyais dans la rue.
+Je ne sais pas qui est cette femme, mais elle devrait vraiment se laver le visage et rester propre.
+Elle gâche sa beauté.
+« Myne, %&$#+@*+#% ? »
+« Hyaaah ! » Au moment où j'ai entendu le discours incompréhensible de la femme, un barrage
+mental s'est rompu et des souvenirs qui m'étaient familiers, mais pas les miens, se sont précipités. En
+l'espace de quelques clignements d'yeux, les années accumulées de souvenirs appartenant à la fille
+nommée Myne s'étaient écrasées dans mon esprit comme une inondation et avaient battu contre mon
+cerveau, me faisant serrer la tête par réflexe d'horreur.
+« Myne, ça va ? »
+Non, je ne suis pas Myne ! Je voulais protester, mais je n'ai pas pu. J'ai été submergée par la
+sensation indescriptible de cette pièce étrange et sale et de ces petites mains faibles qui me devenaient
+familières. J'ai eu la chair de poule lorsque la langue que je ne comprenais pas auparavant est devenue
+pleinement compréhensible.
+L'énorme flot d'informations m'a fait paniquer, et tout ce que je pouvais voir devant moi criait
+une chose : tu n'es plus Urano. Vous êtes Myne.
+« Myne ? Myne ? La femme m'a appelé, inquiète, mais pour moi, elle n'était qu'une étrangère.
+Ou elle aurait dû l'être, mais pour une raison quelconque, j'avais l'impression de la connaître. J'avais
+même l'impression de l'aimer.
+L'amour me semblait dégoûtant et étranger. Ce n'était pas le mien. Je n'arrivais pas encore à
+accepter docilement que la femme en face de moi était ma mère. Alors que ma répulsion et mon amour
+s'entrechoquaient, la femme n'arrêtait pas de crier mon nom. Myne.
+“... Maman.
+Quand j'ai levé les yeux vers cette femme étrange que je n'avais jamais rencontrée auparavant et
+que je l'ai appelée « maman », j'ai cessé d'être Urano et je suis devenue Myne.
+« Est-ce que ça va ? Tu as l'air d'avoir mal à la tête.
+Instinctivement, je ne voulais pas toucher ma mère, elle qui existait dans mes souvenirs mais qui
+était quelqu'un que je ne connaissais pas, et je suis donc retombée sur le lit puant pour éviter sa main
+tendue. J'ai ensuite fermé les yeux pour couper complètement toute stimulation visuelle. “... J'ai encore
+mal à la tête. Je veux dormir.
+« D'accord. Repose-toi bien, ma chérie.
+J'ai attendu que maman quitte la chambre et je me suis mise au travail pour essayer de
+comprendre ma situation. J'avais la tête en désordre à cause de la fièvre, mais je ne pouvais pas dormir
+paisiblement si j'étais paniquée comme je l'étais.
+Je n'avais aucune idée de la façon dont les choses s'étaient terminées ainsi. Mais il était plus
+important de penser à ce qu'il fallait faire ensuite, plutôt que de rester coincé dans le passé. Savoir
+comment cela s'est passé ne changerait rien au fait que je devais faire quelque chose.
+Si je n'utilisais pas les souvenirs de Myne pour bien comprendre ce qui m'entourait, ma famille
+deviendrait rapidement méfiante. J'ai commencé à digérer lentement les nombreux souvenirs de Myne.
+J'ai essayé de penser aussi loin que je le pouvais, mais ses souvenirs étaient ceux d'une très jeune fille
+avec une faible maîtrise de la langue. Elle ne comprenait pas clairement tout ce que maman et papa
+disaient, alors il y avait beaucoup de choses qu'elle ne savait pas. Mon vocabulaire manquait tellement
+que plus de la moitié de ces souvenirs n'avaient aucun sens.
+« Oh mon Dieu, qu'est-ce que je fais... ? »
+À partir des images de ses souvenirs, j'ai déterminé certaines choses. Premièrement, ma famille
+se composait de quatre personnes : ma mère, Effa ; ma sœur aînée, Tuuli ; et mon père, Gunther. On
+aurait dit que papa travaillait comme soldat ou quelque chose comme ça.
+La chose la plus choquante de toutes, cependant, était que ce monde n'était pas le mien. Mes
+souvenirs de ma mère portant un bandana montraient qu'elle avait les cheveux vert clair, une couleur
+que l'on pourrait décrire comme du jade. Ce n'était pas non plus un vert teint contre nature. Elle avait
+vraiment les cheveux verts. Vert si réaliste que j'ai voulu lui tirer les cheveux et m'assurer que ce n'était
+pas une perruque.
+D'ailleurs, Tuuli avait les cheveux verts et papa avait les cheveux bleus. Mes propres cheveux
+étaient bleu foncé. Je ne savais pas si je devais être heureuse que mes cheveux soient presque noirs
+comme j'en avais l'habitude, ou triste qu'ils ne soient pas vraiment noirs.
+Il n'y avait apparemment pas de miroirs dans cette résidence – quelque chose comme un
+appartement situé à l'étage supérieur d'un grand immeuble – donc peu importe à quel point j'explorais
+mes souvenirs, je ne pouvais trouver aucun détail sur mon apparence au-delà de cela. Si je devais
+deviner en me basant sur la qualité de mes parents et de Tuuli, je n'avais probablement pas l'air à
+moitié mal moi-même. Bien que mon apparence n'ait aucune importance pour moi tant que je pouvais
+lire des livres, je n'étais donc pas si inquiet à ce sujet. Je n'avais pas l'air aussi incroyable qu'Urano,
+après tout. Je pourrais vivre sans être mignonne.
+« Haaah. Vraiment, je veux juste lire des livres. J'ai l'impression que ma fièvre disparaîtrait si
+j'avais un livre à la main.
+Je peux survivre n'importe où tant que j'ai des livres. J'endurerai n'importe quoi. Alors, s'il vous
+plaît. Livres. Laissez-moi avoir des livres. J'ai posé un doigt sur mon menton et j'ai commencé à
+chercher des livres dans ma mémoire. Voyons. Je me demande où ils cachent tous les livres dans cet
+endroit.
+« Myne, tu es réveillée ? » Comme pour interrompre intentionnellement mes pensées, une jeune
+fille qui avait l'air d'avoir environ sept ans entra légèrement dans ma chambre.
+C'était Tuuli, ma sœur aînée. Ses cheveux verts, attachés en une tresse légèrement difforme,
+étaient si secs que je pouvais immédiatement dire qu'elle ne les lavait pas du tout. Tout comme
+maman, j'aurais aimé qu'elle se lave le visage. Elle gâchait aussi sa beauté.
+La raison pour laquelle je pensais cela était probablement due à mon éducation au Japon, un
+pays tellement obsédé par la propreté que les autres pays nous considéraient comme obsessionnels.
+Mais je ne m'en souciais pas. Il y avait des choses plus importantes dans le monde. Et en ce moment, il
+y avait une chose que je devais prioriser par-dessus tout.
+« Tuuli, veux-tu m'apporter un (livre) ? » Ma sœur aînée était assez âgée pour savoir lire, alors il
+y avait sûrement au moins une douzaine de livres d'images qui traînaient. Je pouvais encore lire
+malgré le fait que j'étais malade et alitée. C'est un miracle que j'aie pu renaître comme ça, car je me
+soucie plus de lire les livres de ce monde différent qu'autre chose.
+Malheureusement, Tuuli m'a regardé avec confusion malgré mon doux sourire. « Hein ? Qu'est
+ce qu'un livre ?
+« Tu ne sais pas... ? euh, ce sont des choses avec (des lettres) et des trucs (écrits) dessus.
+Certains en ont aussi (des illustrations).
+« Myne, qu'est-ce que tu racontes ? Ne peux-tu pas parler correctement ?
+« Je vous le dis, un (livre) ! Je veux un (livre d'images)."
+« Qu'est-ce que c'est que ça ? Je ne sais pas de quoi tu parles. Apparemment, des mots qui
+n'étaient pas dans les souvenirs de Myne ont fini par être japonais, alors Tuuli a juste secoué la tête de
+confusion, peu importe à quel point j'essayais d'expliquer ce que je voulais.
+« Aaah, bon sang ! (Fais ton travail, traducteur automatique !)"
+« Pourquoi es-tu fâchée, Myne ? »
+« Je ne suis pas fâché. J'ai mal à la tête.
+On dirait que mon premier travail sera de faire attention à tout ce que les gens disent et
+d'essayer d'apprendre autant de nouveaux mots que possible. Avec le cerveau juvénile de Myne et mon
+esprit et mes connaissances de diplômé universitaire, apprendre cette langue devrait être un jeu
+d'enfant. Je... J'espère que ce sera du gâteau.
+Même quand j'étais Urano, je travaillais dur avec un dictionnaire à la main pour comprendre les
+livres étrangers. Si je pensais à apprendre la langue de ce monde comme un moyen de lire les livres
+ici, cela ne me dérangerait pas du tout. Mon amour et ma passion pour les livres étaient si grands qu'ils
+éloignaient les gens de moi.
+“... Tu es fâchée parce que tu as encore de la fièvre ? Tuuli tendit sa main sale, essayant
+probablement de sentir à quel point mon front était chaud.
+J'ai eu le réflexe de lui prendre la main. « Je suis toujours malade, tu vas l'attraper aussi. »
+« C'est vrai. Je ferai attention.
+Sûr. En agissant comme si je m'inquiétais pour elle, je pouvais éviter les choses que je n'aimais
+pas. J'ai réussi à éviter d'être touché par la main sale de Tuuli en utilisant les techniques sociales
+avancées des adultes. Ce n'était pas une mauvaise sœur aînée, mais je ne voulais pas qu'elle me touche
+avant de me désintoxiquer. Du moins, c'est ce que je pensais, avant de regarder mes propres mains
+sales et de soupirer.
+« Haaah. Je veux prendre un (bain). J'ai des démangeaisons à la tête. Au moment où j'ai
+murmuré cela, les souvenirs de Myne m'ont informé de la triste vérité : le mieux que j'obtiendrais était
+un seau d'eau à verser sur ma tête et un chiffon en lambeaux à frotter contre moi-même.
+Non! On ne peut pas appeler ça un bain. De plus, il n'y a pas de toilettes ici ?! Juste un pot de
+chambre ?! Donnez-moi une pause. Attention, quel que soit le dieu qui m'a mis ici... Je voulais vivre
+dans un endroit moderne et pratique.
+Mon environnement était si mauvais qu'honnêtement, ça m'a donné envie de pleurer. Quand
+j'étais Urano, je vivais dans un foyer tout à fait normal. Je n'ai jamais eu de problèmes avec la
+nourriture, les vêtements, l'utilisation de la salle de bain ou l'obtention de livres. Cette nouvelle vie a
+été un énorme déclassement.
+Je... Le Japon me manque. Il était rempli de tant de choses merveilleuses que je tenais pour
+acquises. Des gants de toilette doux, des lits confortables, des livres, des livres, des livres... Mais peu
+importe à quel point je ressentais de la nostalgie, je n'avais pas d'autre choix que de vivre dans ce
+nouveau monde. Pleurer ne me mènerait nulle part. J'ai dû enseigner à ma famille la valeur de la
+propreté.
+D'après mes souvenirs, Myne était une petite fille faible qui avait souvent de la fièvre et finissait
+par rester alitée pendant des jours. La plupart de ses souvenirs concernaient le lit. Si je n'améliorais pas
+mon environnement, je serais probablement mort avant longtemps. Je pouvais imaginer, d'après les
+mauvaises conditions dans lesquelles j'ai été placé pendant ma maladie, qu'il serait idéal d'éviter à tout
+prix d'avoir besoin de soins médicaux.
+... J'ai besoin de nettoyer cette pièce et de trouver comment prendre des bains dès que possible.
+Je suis le genre de personne paresseuse qui évite autant que possible les tâches ménagères, même
+avec des appareils électroniques modernes pratiques. Je me souciais plus de lire des livres que d'aider
+ma mère. Est-ce que je vais pouvoir vivre ici ?
+J'ai secoué la tête pour chasser ces pensées de mon esprit. Non, non. Comme je l'ai dit, c'est un
+miracle que je me sois réincarné. J'ai besoin d'être plus positif. Quelle chance ! J'ai l'occasion de lire
+des livres qui n'existent même pas sur Terre ! ... D’accord. Je recommence à m'enthousiasmer.
+Tout d'abord, pour pouvoir me concentrer sur la lecture de livres sans m'inquiéter, je devais
+prendre soin de mon corps. J'ai lentement fermé les yeux pour pouvoir me reposer. Alors que ma
+conscience s'évanouissait dans l'obscurité, une pensée dominait mon esprit :
+Peu m'importe ce que c'est. Je veux juste lire un livre dès que possible. Aaah, quel que soit le
+dieu qui m'a mis ici, s'il vous plaît, ayez pitié de moi et accordez-moi un livre ! De plus, c'est peut-être
+un peu trop demander, mais je veux aussi une bibliothèque remplie à ras bord de livres.
+A la Découverte de ma Maison 
+Trois jours s'étaient écoulés depuis que j'étais devenue Myne. Ce furent trois jours très intenses.
+J'avais survécu à plusieurs batailles brutales dont je ne pouvais pas parler sans pleurer.
+Tout d'abord, je me suis faufilée hors du lit pour essayer de chercher des livres dans la maison,
+mais maman m'a trouvée et m'a forcée à retourner dans mon lit. Elle s'est mise en colère. J'ai essayé
+plusieurs fois de m'échapper, mais j'ai échoué à chaque fois. À chaque fois. C'était tellement mauvais
+qu'elle me remettait au lit chaque fois qu'elle me voyait, sauf si j'allais aux toilettes !
+En fin de compte, je n'ai pas eu l'occasion de chercher des livres. Non seulement cela, mais
+même si l'utilisation des toilettes était la seule liberté qui m'était offerte, cela s'est également avéré être
+une lutte terrible. La « salle de bain » à cet endroit était un pot de chambre dans le coin de la chambre.
+Pour aggraver les choses, Myne ne pouvait apparemment pas utiliser les toilettes toute seule
+jusqu'à présent, alors j'ai dû me soulager pendant qu'un membre de la famille regardait. Peu importe à
+quel point j'ai crié : « Je peux le faire toute seule ! Ne regardez pas !, personne n'a bougé. Ils se sont
+fâchés contre moi, me demandant ce que je ferais si j'avais pipi partout.
+J'ai fini par utiliser le pot en pleurant, et croyez-le ou non, Tuuli m'a complimenté. « Waouh,
+Myne ! Vous êtes devenu vraiment bon dans ce domaine. Bientôt, vous serez en mesure de le faire par
+vous-même », a-t-elle déclaré. Je pouvais comprendre qu'elle était heureuse pour sa petite sœur en
+grandissant, mais ma fierté, ma dignité et mon respect de soi en tant qu'être humain étaient en
+lambeaux.
+Soit dit en passant, non seulement ma famille a utilisé la salle de bain dans un pot de chambre,
+mais ils l'ont même jeté par la fenêtre. Incroyable.
+Changer de vêtements était également une lutte redoutable. J'ai essayé de le faire par moi
+même, mais mon père, que je connaissais à peine, a pris les choses en main et m'a changé de
+vêtements. C'était tellement embarrassant que j'ai commencé à pleurer, insistant sur le fait que je
+pouvais le faire moi-même, mais il a juste interprété cela comme une crise de colère. Absolument
+incroyable.
+Comme mon père d'origine était décédé quand j'étais jeune, je ne comprenais pas vraiment
+comment interagir avec un père. Bien que la mémoire de Myne me dise que je l'aimais, je ne pouvais
+le voir que comme un gars musclé à l'air méchant. Il était super fort grâce à son travail de soldat, et
+toute ma résistance a été écrasée devant sa puissance.
+Trois jours de perte constante aux mains de ma famille ont fait que mon cœur de jeune fille et
+mon sentiment de honte ont été déchirés en lambeaux.
+Je suis une jeune fille. Ma famille doit prendre soin de moi. C'est comme ça que les choses
+doivent être. ... Si je ne pense pas comme ça, je vais mourir ! Je n'en peux plus ! Cette vie est trop
+lourde ! Du moins, c'est ce que j'ai crié dans ma tête, mais il n'y avait vraiment rien qui m'aidait dans
+ma situation. Même si je m'enfuyais de chez moi, une fille faible et maladive comme moi ne serait pas
+capable de faire quoi que ce soit par elle-même. Je finissais par courir dans les rues à la recherche
+d'une douche, hurlant d'horreur au milieu des déchets qui pleuvaient d'en haut, jusqu'à ce que je finisse
+par mourir misérablement de faim.
+Bien qu'il ait pu sembler que je n'avais connu que l'échec ici, ce n'était pas le cas. J'ai eu mes
+propres petites victoires. Par exemple, après avoir été incapable de supporter ma propre saleté, j'ai
+demandé à Tuuli d'essuyer mon corps avec un chiffon chaud chaque jour et elle a accepté. Je veux
+dire, si je dois me faire déshabiller de toute façon, pourquoi ne lui demanderais-je pas de m'essuyer ?
+J'ai dépassé le point de honte ici.
+Je me demande si les gens de ce monde ont quelque chose contre le fait de s'essuyer le corps les
+uns les autres. Tuuli me regardait bizarrement à chaque fois qu'elle le faisait, mais je me sentais bien.
+L'eau chaude dans le seau a fini par être sale le premier jour, mais ces derniers temps, elle a toujours
+fini par être beaucoup plus claire. Cela dit, j'avais toujours des démangeaisons à la tête. Je savais que
+nous n'en avions pas, mais je voulais du shampooing.
+Il y avait aussi quelque chose d'autre que j'ai réussi à obtenir : un bâton à cheveux pour garder
+mes cheveux ensemble ! J'ai demandé un bâton en bois pour empêcher mes longs cheveux raides
+d'aller partout, et Tuuli en a en fait sculpté un dans un morceau de bois pour moi.
+Eh bien, la première chose que j'ai faite a été de trouver la poupée de Tuuli et de lui demander
+si je pouvais lui casser la jambe, ce qui l'a fait pleurer. Je me sens mal à ce sujet. Mais pour être
+honnête, même si c'était précieux pour elle avec des pièces sculptées dans du bois par papa et des
+vêtements cousus par maman, cela ressemblait un peu à un jouet bon marché pour moi. Je ne savais
+pas que c'était si important au premier coup d'œil.
+De toute façon. J'ai roulé mes cheveux en chignon, mais Tuuli m'a dit que seuls les adultes
+portaient tous leurs cheveux comme ça, alors j'ai opté pour une coiffure à moitié. La culture de ce
+monde est certainement différente.
+J'étais coincé à m'humilier tous les jours, alors la seule chose qu'il me restait à faire était de me
+remettre sur mes deux pieds et d'améliorer les choses comme je le pouvais. Pour cela, j'avais besoin de
+livres.
+La première étape pour améliorer ma vie ici serait d'obtenir des livres. Avec les livres, cela ne
+me dérangerait pas de passer toute ma vie au lit, et je pourrais faire face aux aspects les plus durs de la
+vie. Je le pouvais, et je le ferais.
+J'ai donc décidé d'explorer ma maison aujourd'hui par tous les moyens nécessaires. Je n'avais
+pas lu de livres depuis longtemps et les symptômes de sevrage commençaient à apparaître. Il n'a pas
+fallu longtemps avant que je ne commence à crier « Livres, donnez-moi des boooks ! Waaah ! tout en
+sanglotant et en s'agitant.
+« Myne, est-ce que tu dors ? » Tuuli ouvrit la porte et passa la tête à l'intérieur. Après avoir vu
+que j'étais toujours tranquillement allongé dans mon lit, elle hocha la tête en signe de satisfaction.
+Au cours des trois derniers jours, je m'étais constamment faufilée hors du lit après mon réveil et
+j'avais essayé de chercher des livres, alors maman et Tuuli – qui s'était occupée de moi la plupart du
+temps – étaient complètement sur leurs gardes. Tuuli, en particulier, voulait à tout prix me garder au lit
+pendant que maman était au travail toute la journée, puisqu'on lui avait confié la garde de moi. Mon
+petit corps était incapable de battre Tuuli, peu importe à quel point j'essayais de m'enfuir.
+« Un jour, je vais (monter) hors d'ici. »
+« Qu'est-ce que c'était, Myne ? »
+“... Mmm ? J'ai juste dit que j'avais hâte de grandir.
+Tuuli, ne remarquant naturellement pas la véritable intention derrière mes mots édulcorés, eut
+un sourire troublé. « Vous deviendrez beaucoup plus gros une fois que votre maladie aura disparu.
+Vous êtes malade tout le temps, alors vous mangez à peine. Parfois, les gens pensent que vous avez
+trois ans alors que vous en avez déjà cinq.
+« Et toi, Tuuli ? »
+« J'ai six ans, mais beaucoup de gens pensent que j'ai sept ou huit ans, alors je pense que tout ira
+bien. »
+Nous sommes nés à un an d'intervalle et il y a une grande différence entre nous ? On dirait que
+mon ascension pourrait finir par être un peu plus difficile que je ne le pensais. Mais je
+n'abandonnerai pas. Je vais nettoyer cet endroit, manger soigneusement et retrouver la santé en un
+rien de temps.
+« Maman est allée travailler, alors je vais faire la vaisselle. Ne sortez pas du lit, d'accord ? Quoi
+qu'il arrive. Tu ne t'amélioreras pas si tu ne dors pas, et si tu ne t'améliores pas, tu ne grandiras pas.
+J'avais été gentil pendant la journée précédente afin de relâcher la garde de Tuuli, attendant
+tranquillement dans mon lit le moment où elle partirait.
+« D'accord, j'y vais. Sois sage pendant mon absence.
+« Okaaaay. » J'ai donné à Tuuli la réponse qu'elle voulait et elle a fermé la porte de la chambre.
+Heh... Hé hé hé hé... ! Maintenant, dépêchez-vous et partez.
+J'ai tranquillement attendu que Tuuli rassemble les plats dans un panier et les emmène à
+l'extérieur. Je ne savais pas où elle les lavait, mais je savais qu'elle sortait généralement pendant trente
+minutes pour le faire. Notre maison n'avait pas d'eau, alors j'ai pu extrapoler qu'il y avait une source
+d'eau partagée à l'extérieur quelque part. J'ai entendu le cliquetis de la serrure, puis j'ai écouté les pas
+de Tuuli disparaître dans les marches.
+Okaaay... C'est l'heure de la chasse. Tuuli est certainement assez vieux pour avoir quelques
+livres d'images autour de la maison. Je trouverai des livres en un rien de temps une fois que j'aurai
+commencé à chercher. Sans faute. Il n'y a pas moyen qu'il y ait une maison sans livres. Je ne pourrai
+probablement pas lire le livre, mais je serai capable d'imaginer ce qui se passe à partir des images et
+de deviner ce que les mots signifient.
+Une fois que les pas de Tuuli eurent complètement disparu, je me glissai furtivement hors du lit.
+J'ai grimacé un peu après que mes pieds aient touché le sol ; Il était couvert de saleté et semblait
+crasseux. Ma famille avait rendu la vie sale en se promenant avec ses chaussures sales, et bien que je
+redoutais de marcher dessus avec mes pieds nus, Tuuli m'avait enlevé mes sabots en bois pour
+m'empêcher d'aller nulle part. Je n’avais pas le choix.
+Puits... De toute façon, trouver des livres est plus important que de garder les pieds propres.
+Le lit dans lequel j'avais été enfermé pendant des jours à cause de ma fièvre implacable avait un
+panier à côté rempli de jouets d'enfants en bois et en paille, mais pas de livres. « Ce serait beaucoup
+plus facile pour moi s'ils étaient juste ici... »
+Je pouvais sentir la saleté frotter contre la plante de mes pieds à chaque fois que je marchais.
+C'était normal dans cette famille de garder des chaussures à la maison, donc je savais que je ne me
+plaindrais pas. Je le savais, mais je ne pouvais pas m'en empêcher.
+« Quelqu'un m'apporterait-il un balai et un chiffon, s'il vous plaît ? » Naturellement, personne
+n'a répondu à mon appel, et ni un balai ni un chiffon n'est apparu comme par magie de nulle part.
+« Ngggh ! Suis-je déjà dans le pétrin ? » Pour moi, le plus grand obstacle à l'exploration de la
+maison était la porte de la chambre. Je pouvais en quelque sorte atteindre la poignée de porte si je
+m'étirais très, très fort, mais en fait, la tourner était beaucoup plus difficile que ce à quoi je m'attendais.
+J'ai regardé autour de moi dans la pièce à la recherche de quelque chose sur lequel je pourrais
+marcher, et j'ai remarqué la grande boîte qui contenait mes vêtements. « Nmmn... ! » Je n'aurais eu
+aucun problème à le déplacer à l'époque d'Urano, mais mes mains étaient si petites maintenant que je
+ne pouvais pas le faire bouger, peu importe à quel point je poussais. J'ai pensé à retourner le panier
+rempli de jouets et à me tenir debout dessus puisque j'étais si petit de toute façon, mais j'étais
+probablement encore assez lourd pour qu'il finisse par être écrasé.
+« J'ai besoin de grandir vite. Il y a tellement de choses que je ne peux pas faire avec ce corps.
+J'ai regardé autour de moi et, après avoir réfléchi à ce que je pouvais bouger, j'ai décidé de
+mettre en boule la couette de mes parents pour l'utiliser comme tabouret. Je détesterais mettre ma
+propre couette sur ce sol sale, mais comme mes parents étaient habitués à vivre dans cette saleté, j'étais
+sûre qu'ils ne m'en voudraient pas d'utiliser la leur. Sans faute. Um... Je suis désolée, maman. Papa. Il
+n'y a rien que je ne ferai pas si des livres sont en jeu, même si cela signifie que je vais me faire
+engueuler plus tard.
+« Ouf. » J'ai enfourché la couette en boule et j'ai réussi à tourner la poignée de porte en utilisant
+tout le poids de mon corps.
+                                    </script>
+                        <br />
+                        <!-- Buttons w/ function -->
+                        <div class="btn_box">
+                            <button class="submit" onclick="segmentation()">
+                                <span>Segmentation</span>
+                            </button>
+                            <button class="submit" onclick="dictionnaire()">
+                                <span>Dictionnaire</span>
+                            </button>
+                            <button class="submit" onclick="NB_phrases()">
+                                <span>Nombre de phrases</span>
+                            </button>
+                            <!-- Ce bouton transforme les l (minuscule) en I (majuscule) -->
+                            <button class="submit" onclick="replaceLtoI()">
+                                <span>l -> I</span>
+                            </button>
+                        </div>
+                    </div>
+                    <!-- Display areas(DONE) -->
+                    <div id="log1" class="log" style="width:100%"></div>
+                    <br />
+                    <div class="global">
+                        <div class="display_area" id="displayA"></div>
+                        <div class="page_analysis" id="pageAn"></div>
+                    </div>
+                </div>
+            </div>
+            <!-- Link -->
+            <!-- Transform into button ? (DONE)-->
+            <div id="IV" class="link">
+                <div style="text-align: center; margin: 20px;">
+                    <p class="link_url">
+                        <strong>
+                            <a href="https://www.sorbonne-nouvelle.fr/" class="btn_link_cont"
+                                >Université Paris 3</a>
+                        </strong>
+                    </p>
+                </div>
+            </div>
+        </div>
+        <script src="assets/js/js_file.js"></script>
     </body>
 </html>
